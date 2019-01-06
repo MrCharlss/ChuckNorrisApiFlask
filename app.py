@@ -8,10 +8,12 @@ app = Flask(__name__)
 def hello_world():
     cats = requests.get("https://api.chucknorris.io/jokes/categories")
     jCats = cats.json()
+    lista = " "
     for cat in jCats:
-        print(cat)
+        lista = lista + " | " + cat
 
-    return jCats[2]
+
+    return lista
 
 
 if __name__ == '__main__':
